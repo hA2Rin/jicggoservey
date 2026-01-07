@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📄</text></svg>">
+    <title>직구 설문조사</title>
+    <link rel="stylesheet" href="event.css">
+</head>
+<body>
+    <div class="form-wrapper">
+        <div class="banner">
+            <div class="banner-text">그동안 본 직구에 관하여</div>
+        </div>
+
+        <div id="formSection">
+            <header class="form-header">
+                <h1>직구라는 사람은 어땠나요?</h1>
+                <p>솔직하게 적어주는 것이 직구에게 도움이 됩니다.</p>
+            </header>
+
+            <form id="eventForm" novalidate>
+                <div id="step1" class="form-step">
+                    <div class="input-card">
+                        <label for="userName">성함 <span class="required" data-tooltip="필수로 작성해야 하는 칸 입니다">*</span></label> 
+                        <input type="text" id="userName" placeholder="성함을 입력해 주세요.">
+                        <div id="nameError" class="error-msg"></div>
+                    </div>
+
+                    <div class="input-card">
+                        <label>성별 <span class="required" data-tooltip="필수로 작성해야 하는 칸 입니다">*</span></label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="userGender" value="남"> 남</label>
+                            <label><input type="radio" name="userGender" value="여"> 여</label>
+                        </div>
+                        <div id="genderError" class="error-msg"></div>
+                    </div>
+                    
+                    <div class="btn-container">
+                        <button type="button" class="next-btn" onclick="goToNext()">다음 ➔</button>
+                    </div>
+                </div>
+
+                <div id="step2" class="form-step" style="display: none;">
+                    <div class="input-card">
+                        <label>1. 직구의 첫인상 / 현인상은 어떤가요? <span class="required" data-tooltip="필수로 작성해야 하는 칸 입니다">*</span></label>
+                        <textarea id="q1" rows="3" placeholder="내용을 10자 이상 입력해주세요."></textarea>
+                        <div id="q1Error" class="error-msg"></div>
+                    </div>
+
+                    <div class="input-card">
+                        <label>2. 직구와 어떻게 친해졌고 지금은 어떤가요? <span class="required" data-tooltip="필수로 작성해야 하는 칸 입니다">*</span></label>
+                        <textarea id="q2" rows="3" placeholder="내용을 10자 이상 입력해주세요."></textarea>
+                        <div id="q2Error" class="error-msg"></div>
+                    </div>
+
+                    <div class="input-card">
+                        <label>3. 직구에 대한 만족도 <span class="required" data-tooltip="필수로 작성해야 하는 칸 입니다">*</span></label>
+                        <div class="score-group">
+                            <label><input type="radio" name="satisfaction" value="1"> 1점</label>
+                            <label><input type="radio" name="satisfaction" value="2"> 2점</label>
+                            <label><input type="radio" name="satisfaction" value="3"> 3점</label>
+                            <label><input type="radio" name="satisfaction" value="4"> 4점</label>
+                            <label><input type="radio" name="satisfaction" value="5"> 5점</label>
+                        </div>
+                        <div id="satError" class="error-msg"></div>
+                    </div>
+
+                    <div class="input-card">
+                        <label>4. 직구에게 하고 싶은 한마디 <span class="required" data-tooltip="필수로 작성해야 하는 칸 입니다">*</span></label>
+                        <textarea id="q4" rows="3" placeholder="내용을 10자 이상 입력해주세요."></textarea>
+                        <div id="q4Error" class="error-msg"></div>
+                        <p class="info-text">※ 설문 내용은 원천 공개하지 않습니다.</p>
+                    </div>
+
+                    <div class="btn-container">
+                        <button type="button" class="prev-btn" onclick="goToPrev()">이전</button>
+                        <button type="submit" id="submitBtn">제출하기</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div id="successSection" style="display: none;">
+            <div class="success-card">
+                <div class="success-icon">💌</div>
+                <h2>설문이 완료되었습니다!</h2>
+                <p>참여해주신 여러분들 감사합니다. 여러분들의 설문을 적극 반영하겠습니다.</p>
+                <button onclick="location.reload()" class="home-btn">처음으로</button>
+            </div>
+        </div>
+    </div>
+    <script src="event.js"></script>
+</body>
+</html>
