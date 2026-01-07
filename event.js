@@ -55,7 +55,7 @@ textAreas.forEach(id => {
     const checkLength = () => {
         const len = el.value.trim().length;
         if (len < 10) {
-            errorEl.innerText = "10자 이상 작성해야 합니다. (현재 " + len + "자)";
+            errorEl.innerText = "10자 이상 작성해야 합니다.";
             errorEl.style.color = "#ff4d4f";
         } else {
             errorEl.innerText = ""; 
@@ -149,4 +149,5 @@ document.querySelectorAll('input[name="userGender"], input[name="satisfaction"]'
         const errorDiv = this.closest('.input-card').querySelector('.error-msg');
         if (errorDiv) errorDiv.innerText = "";
     });
+
 });
